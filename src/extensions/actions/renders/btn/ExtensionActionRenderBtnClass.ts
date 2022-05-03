@@ -1,9 +1,9 @@
 import ExtensionActionRenderBtnOptionsInterface
-  from '~/extensions/actions/renders/btn/ExtensionActionRenderBtnOptionsInterface'
+  from './ExtensionActionRenderBtnOptionsInterface'
 
 type OptionalOptionsType = 'onClick' | 'isActive'
 
-export default class ExtensionActionRenderBtn {
+export default class ExtensionActionRenderBtnClass {
   options: ExtensionActionRenderBtnOptionsInterface
 
   constructor (

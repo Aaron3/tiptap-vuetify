@@ -19,7 +19,7 @@ import { mixins } from 'vue-class-component'
 import { Component } from 'vue-property-decorator'
 import { VTextField } from 'vuetify/lib'
 import I18nMixin from '../../../mixins/I18nMixin'
-import EVENTS from '~/extensions/nativeExtensions/image/events'
+import EVENTS from './events'
 
 @Component({
   components: { VTextField }

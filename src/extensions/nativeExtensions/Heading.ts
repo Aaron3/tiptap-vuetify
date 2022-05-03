@@ -1,19 +1,20 @@
 import { Heading as HeadingOriginal } from 'tiptap-extensions'
-import TextIcon from '~/extensions/nativeExtensions/icons/TextIcon'
-import { VuetifyIconsGroups } from '~/configs/theme'
-import I18nText from '~/i18n/I18nText'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import ExtensionActionRenderBtn from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.ts'
-import AbstractExtension from '~/extensions/AbstractExtension'
+import TextIcon from './icons/TextIcon'
+import { VuetifyIconsGroups } from '../../configs/theme'
+import I18nText from '../../i18n/I18nText'
+import ExtensionActionInterface from '..//actions/ExtensionActionInterface'
+import ExtensionActionRenderBtnClass from '..//actions/renders/btn/ExtensionActionRenderBtnClass'
+import AbstractExtension from '../AbstractExtension'
 
 export default class Heading extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, HeadingOriginal)
   }
 
   get availableActions (): ExtensionActionInterface[] {
-    return this.options.levels.map(level => ({
-      render: new ExtensionActionRenderBtn({
+    // @ts-ignore
+    return this.options.levels.map((level: number) => ({
+      render: new ExtensionActionRenderBtnClass({
         tooltip: new I18nText('extensions.Heading.buttons.heading.tooltip', { level }),
         icons: {
           [VuetifyIconsGroups.md]: new TextIcon('H' + level),

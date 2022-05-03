@@ -1,9 +1,9 @@
 import { TableHeader as TableHeaderOriginal } from 'tiptap-extensions'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import AbstractExtension from '~/extensions/AbstractExtension'
+import ExtensionActionInterface from '../../actions/ExtensionActionInterface'
+import AbstractExtension from '../../AbstractExtension'
 
 export default class TableHeader extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, TableHeaderOriginal)
   }
 

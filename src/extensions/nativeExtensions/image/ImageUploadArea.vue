@@ -31,8 +31,8 @@
 <script lang="ts">
 import { mixins } from 'vue-class-component'
 import { Component } from 'vue-property-decorator'
-import I18nMixin from '~/mixins/I18nMixin'
-import EVENTS from '~/extensions/nativeExtensions/image/events'
+import I18nMixin from '../../../mixins/I18nMixin'
+import EVENTS from './events'
 
 const HOLDER_CLASS = 'tiptap-vuetify-image-upload-area-holder'
 

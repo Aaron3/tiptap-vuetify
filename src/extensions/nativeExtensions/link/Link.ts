@@ -1,15 +1,15 @@
 import { Link as LinkOriginal } from 'tiptap-extensions'
-import { VuetifyIconsGroups } from '~/configs/theme'
-import VuetifyIcon from '~/extensions/nativeExtensions/icons/VuetifyIcon'
-import I18nText from '~/i18n/I18nText'
-import AbstractExtension from '~/extensions/AbstractExtension'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import LinkWindow from '~/extensions/nativeExtensions/link/LinkWindow.vue'
+import { VuetifyIconsGroups } from '../../../configs/theme'
+import VuetifyIcon from '..//icons/VuetifyIcon'
+import I18nText from '../../../i18n/I18nText'
+import AbstractExtension from '../../AbstractExtension'
+import ExtensionActionInterface from '../../actions/ExtensionActionInterface'
+import LinkWindow from './LinkWindow.vue'
 import Vue from 'vue'
-import ExtensionActionRenderBtn from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.ts'
+import ExtensionActionRenderBtnClass from '../../actions/renders/btn/ExtensionActionRenderBtnClass'
 
 export default class Link extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, LinkOriginal)
   }
 
@@ -18,7 +18,7 @@ export default class Link extends AbstractExtension {
 
     return [
       {
-        render: new ExtensionActionRenderBtn({
+        render: new ExtensionActionRenderBtnClass({
           tooltip: (context, options) => new I18nText(
             options.isActive(context)
               ? 'extensions.Link.buttons.isActive.tooltip'

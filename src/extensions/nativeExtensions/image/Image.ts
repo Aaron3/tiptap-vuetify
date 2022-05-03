@@ -1,15 +1,15 @@
 import { Image as ImageOriginal } from 'tiptap-extensions'
-import { VuetifyIconsGroups } from '~/configs/theme'
-import VuetifyIcon from '~/extensions/nativeExtensions/icons/VuetifyIcon'
-import I18nText from '~/i18n/I18nText'
-import AbstractExtension from '~/extensions/AbstractExtension'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
+import { VuetifyIconsGroups } from '../../../configs/theme'
+import VuetifyIcon from '../icons/VuetifyIcon'
+import I18nText from '../../../i18n/I18nText'
+import AbstractExtension from '../../AbstractExtension'
+import ExtensionActionInterface from '../../actions/ExtensionActionInterface'
 import Vue from 'vue'
-import ExtensionActionRenderBtn from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.ts'
-import ImageWindow from '~/extensions/nativeExtensions/image/ImageWindow.vue'
+import ExtensionActionRenderBtnClass from '../../actions/renders/btn/ExtensionActionRenderBtnClass'
+import ImageWindow from './ImageWindow.vue'
 
 export default class Image extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, ImageOriginal)
   }
 
@@ -19,7 +19,7 @@ export default class Image extends AbstractExtension {
 
     return [
       {
-        render: new ExtensionActionRenderBtn({
+        render: new ExtensionActionRenderBtnClass({
           tooltip: new I18nText('extensions.Image.buttons.tooltip'),
           icons: {
             [VuetifyIconsGroups.md]: new VuetifyIcon('image'),

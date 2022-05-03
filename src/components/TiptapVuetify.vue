@@ -56,15 +56,15 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Editor, EditorContent } from 'tiptap'
-import Toolbar from '~/components/Toolbar.vue'
+import Toolbar from './Toolbar.vue'
 import { Component, Prop, Watch } from 'vue-property-decorator'
-import { EVENTS, PROPS, EDITOR_TYPES_ENUM } from '~/const'
-import Bubble from '~/components/Bubble.vue'
+import { EVENTS, PROPS, EDITOR_TYPES_ENUM } from '../const'
+import Bubble from './Bubble.vue'
 import { Placeholder } from 'tiptap-extensions'
-import { ExtensionActionRenderInEnum } from '~/extensions/actions/ExtensionActionRenderInEnum'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
+import { ExtensionActionRenderInEnum } from '../extensions/actions/ExtensionActionRenderInEnum'
+import ExtensionActionInterface from '../extensions/actions/ExtensionActionInterface'
 import { VCard } from 'vuetify/lib'
-import AbstractExtensionInterface from '~/extensions/AbstractExtensionInterface'
+import AbstractExtensionInterface from '../extensions/AbstractExtensionInterface'
 
 @Component({
   components: {

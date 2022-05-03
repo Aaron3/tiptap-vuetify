@@ -1,14 +1,14 @@
 import { Table as TableOriginal } from 'tiptap-extensions'
-import { VuetifyIconsGroups } from '~/configs/theme'
-import VuetifyIcon from '~/extensions/nativeExtensions/icons/VuetifyIcon'
-import AbstractExtension from '~/extensions/AbstractExtension'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
+import { VuetifyIconsGroups } from '../../../configs/theme'
+import VuetifyIcon from '../icons/VuetifyIcon'
+import AbstractExtension from '../../AbstractExtension'
+import ExtensionActionInterface from '../../actions/ExtensionActionInterface'
 import Vue from 'vue'
-import ExtensionActionRenderBtn from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.ts'
-import TableWindow from '~/extensions/nativeExtensions/table/TableWindow.vue'
+import ExtensionActionRenderBtnClass from '../../actions/renders/btn/ExtensionActionRenderBtnClass'
+import TableWindow from './TableWindow.vue'
 
 export default class Table extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, TableOriginal)
   }
 
@@ -17,7 +17,7 @@ export default class Table extends AbstractExtension {
 
     return [
       {
-        render: new ExtensionActionRenderBtn({
+        render: new ExtensionActionRenderBtnClass({
           tooltip: 'Table',
           icons: {
             [VuetifyIconsGroups.md]: new VuetifyIcon('table'),

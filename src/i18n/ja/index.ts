@@ -90,7 +90,7 @@ export default {
     Heading: {
       buttons: {
         heading: {
-          tooltip: ({ level }) => '見出し ' + level
+          tooltip: ({ level }: {level: number}) => '見出し ' + level
         }
       }
     },

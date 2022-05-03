@@ -19,11 +19,11 @@ import it from './it'
 import el from './el'
 import sk from './sk'
 
-import ConsoleLogger from '~/logging/ConsoleLogger'
-import { TiptapVuetifyPlugin } from '~/main'
+import ConsoleLogger from '../logging/ConsoleLogger'
+import { TiptapVuetifyPlugin } from '../main'
 
 export const defaultLanguage = 'en'
-export const dictionary = {
+export const dictionary: Record<string, Record<string, unknown>> = {
   en,
   ru,
   es,
@@ -51,7 +51,7 @@ export function getCurrentLang () {
   return TiptapVuetifyPlugin.vuetifyLang || defaultLanguage
 }
 
-export function getMsg (path: string, args?, lang: null | string = null): string {
+export function getMsg (path: string, args?: any, lang: null | string = null): string {
   let currentLang = lang || getCurrentLang()
 
   if (!dictionary[currentLang]) {
@@ -60,12 +60,14 @@ export function getMsg (path: string, args?, lang: null | string = null): string
     currentLang = defaultLanguage
   }
 
-  const dictionaryByLang = dictionary[currentLang]
-  let target
+  const dictionaryByLang: Record<string, unknown> = dictionary[currentLang]
+  let target: any | string
 
   try {
     target = path.split('.').reduce((prev: string, curr: string) => {
+      // @ts-ignore
       return prev[curr]
+      // @ts-ignore
     }, dictionaryByLang)
     // No error thrown by above reduce function if last stage is undefined - no fallback used and returned value is empty
     if (target === undefined) {

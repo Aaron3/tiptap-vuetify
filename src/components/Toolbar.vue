@@ -33,9 +33,9 @@
 import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator'
 import { Editor, EditorMenuBar } from 'tiptap'
-import toolbarConfig from '~/configs/toolbar'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import ActionsRender from '~/components/ActionsRender.vue'
+import toolbarConfig from '../configs/toolbar'
+import ExtensionActionInterface from '../extensions/actions/ExtensionActionInterface'
+import ActionsRender from './ActionsRender.vue'
 import { VToolbar } from 'vuetify/lib'
 
 @Component({

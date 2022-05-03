@@ -1,11 +1,11 @@
-import { PACKAGE_NAME } from '~/const'
+import { PACKAGE_NAME } from '../const'
 
 class ConsoleLogger {
-  warn (msg) {
+  warn (msg: string) {
     console.warn(`${PACKAGE_NAME}: ${msg}`)
   }
 
-  error (msg) {
+  error (msg: string) {
     console.error(`${PACKAGE_NAME}: ${msg}`)
   }
 }

@@ -1,9 +1,9 @@
 import { TableCell as TableCellOriginal } from 'tiptap-extensions'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import AbstractExtension from '~/extensions/AbstractExtension'
+import ExtensionActionInterface from '../../actions/ExtensionActionInterface'
+import AbstractExtension from '../../AbstractExtension'
 
 export default class TableCell extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, TableCellOriginal)
   }
 

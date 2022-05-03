@@ -90,7 +90,7 @@ export default {
     Heading: {
       buttons: {
         heading: {
-          tooltip: args => 'Titre de niveau ' + args.level
+          tooltip: ({ level }: {level: number}) => 'Titre de niveau ' + level
         }
       }
     },

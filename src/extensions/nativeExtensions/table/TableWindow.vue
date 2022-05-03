@@ -68,8 +68,8 @@ import {
   VTextField,
   VCheckbox
 } from 'vuetify/lib'
-import I18nMixin from '~/mixins/I18nMixin'
-import { COMMON_ICONS } from '~/configs/theme'
+import I18nMixin from '../../../mixins/I18nMixin'
+import { COMMON_ICONS } from '../../../configs/theme'
 
 export const PROPS = {
   VALUE: 'value' as const,

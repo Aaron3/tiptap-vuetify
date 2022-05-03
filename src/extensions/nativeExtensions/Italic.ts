@@ -1,20 +1,20 @@
 import { Italic as ItalicOriginal } from 'tiptap-extensions'
-import { VuetifyIconsGroups } from '~/configs/theme'
-import VuetifyIcon from '~/extensions/nativeExtensions/icons/VuetifyIcon'
-import I18nText from '~/i18n/I18nText'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import ExtensionActionRenderBtn from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.ts'
-import AbstractExtension from '~/extensions/AbstractExtension'
+import { VuetifyIconsGroups } from '../../configs/theme'
+import VuetifyIcon from './icons/VuetifyIcon'
+import I18nText from '../../i18n/I18nText'
+import ExtensionActionInterface from '..//actions/ExtensionActionInterface'
+import ExtensionActionRenderBtnClass from '..//actions/renders/btn/ExtensionActionRenderBtnClass'
+import AbstractExtension from '../AbstractExtension'
 
 export default class Italic extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, ItalicOriginal)
   }
 
   get availableActions (): ExtensionActionInterface[] {
     return [
       {
-        render: new ExtensionActionRenderBtn({
+        render: new ExtensionActionRenderBtnClass({
           tooltip: new I18nText('extensions.Italic.buttons.italic.tooltip'),
           icons: {
             [VuetifyIconsGroups.md]: new VuetifyIcon('format_italic'),

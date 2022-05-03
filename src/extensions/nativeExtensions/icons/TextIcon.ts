@@ -1,7 +1,7 @@
-import IconInterface from '~/extensions/nativeExtensions/icons/IconInterface'
+import IconInterface from './IconInterface'
 
 export default class TextIcon implements IconInterface {
-  constructor (public text) {}
+  constructor (public text: string) {}
 
   toString () {
     return this.text

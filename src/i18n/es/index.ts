@@ -90,7 +90,7 @@ export default {
     Heading: {
       buttons: {
         heading: {
-          tooltip: ({ level }) => `Nivel de encabezado ${level}`
+          tooltip: ({ level }: {level: number}) => `Nivel de encabezado ${level}`
         }
       }
     },

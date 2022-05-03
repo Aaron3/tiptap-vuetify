@@ -1,7 +1,5 @@
-import ExtensionActionRenderInterface from '~/extensions/actions/renders/ExtensionActionRenderInterface'
-// import { ExtensionActionRenderInEnum } from '~/extensions/actions/ExtensionActionRenderInEnum'
+import ExtensionActionRenderInterface from './renders/ExtensionActionRenderInterface'
 
 export default interface ExtensionActionInterface {
   render: ExtensionActionRenderInterface
-  // renderIn: ExtensionActionRenderInEnum
 }

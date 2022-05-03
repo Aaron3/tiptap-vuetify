@@ -1,9 +1,9 @@
 import { ListItem as ListItemOriginal } from 'tiptap-extensions'
-import AbstractExtension from '~/extensions/AbstractExtension'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
+import AbstractExtension from '../AbstractExtension'
+import ExtensionActionInterface from '..//actions/ExtensionActionInterface'
 
 export default class ListItem extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, ListItemOriginal)
   }
 

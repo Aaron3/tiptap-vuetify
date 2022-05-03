@@ -1,8 +1,9 @@
-import VuetifyIcon from '~/extensions/nativeExtensions/icons/VuetifyIcon'
-import AbstractExtension from '~/extensions/AbstractExtension'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import { VuetifyIconsGroups } from '~/configs/theme'
-import ExtensionActionRenderBtn from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.ts'
+import VuetifyIcon from '../src/extensions/nativeExtensions/icons/VuetifyIcon'
+import AbstractExtension from '../src/extensions/AbstractExtension'
+import ExtensionActionInterface from '../src/extensions/actions/ExtensionActionInterface'
+import { VuetifyIconsGroups } from '../src/configs/theme'
+import ExtensionActionRenderBtnClass from '../src/extensions/actions/renders/btn/ExtensionActionRenderBtnClass'
+import { Editor } from 'tiptap'
 
 // A class must inherit from an abstract class
 export default class MyCustomExtension extends AbstractExtension {
@@ -14,7 +15,7 @@ export default class MyCustomExtension extends AbstractExtension {
     // For example, you can make this extension add a several buttons (array items)
     return [
       {
-        render: new ExtensionActionRenderBtn({
+        render: new ExtensionActionRenderBtnClass({
           tooltip: (context, options) => options.isActive(context)
             ? 'Make read-only'
             : 'Disable read-only',
@@ -42,7 +43,7 @@ export default class MyCustomExtension extends AbstractExtension {
   }
 
   // Editor initialization hook, here you can access the Editor
-  onEditorInit (editor) {
+  onEditorInit (editor: Editor) {
     this.isEditable = editor.options.editable
   }
 }

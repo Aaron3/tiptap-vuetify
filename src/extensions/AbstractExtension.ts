@@ -1,4 +1,5 @@
-import AbstractExtensionInterface from '~/extensions/AbstractExtensionInterface'
+import AbstractExtensionInterface from './AbstractExtensionInterface'
+import ExtensionActionInterface from './actions/ExtensionActionInterface';
 
 export default abstract class AbstractExtension implements AbstractExtensionInterface {
   nativeExtensionInstance = null
@@ -6,11 +7,12 @@ export default abstract class AbstractExtension implements AbstractExtensionInte
   /**
    * Доступные для отображения кнопки (например в зависимости от настроек)
    */
-  abstract get availableActions ()
+  abstract get availableActions (): ExtensionActionInterface[]
 
-  protected constructor (protected options, protected extensionClass) {
+  protected constructor (protected options: Record<string, unknown>, protected extensionClass: unknown) {
     if (extensionClass) {
-      // eslint-disable-next-line
+      // @ts-ignore
+      // eslint-disable-next-line new-cap
       this.nativeExtensionInstance = new extensionClass(options)
     }
   }

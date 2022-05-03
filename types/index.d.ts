@@ -1,5 +1,5 @@
 // !!! В этом файле не использовать алиасы в путях (e.g. "~")
-import Vue, { PluginObject } from 'vue'
+import { PluginObject } from 'vue'
 import { Framework } from 'vuetify'
 import { VuetifyIconsGroups } from '../src/configs/theme'
 
@@ -9,8 +9,6 @@ export interface PluginInterface<T> extends PluginObject<T> {
   vuetify: Framework
   installed: boolean
   vuetifyLang: Framework['lang']['current'] | null
-
-  install (VueFuncConstructor, options: T)
 }
 
 export interface OptionsInterface {

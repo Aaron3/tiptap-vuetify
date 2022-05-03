@@ -17,9 +17,9 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import ExtensionActionRenderBtnComponent from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.vue'
-import ExtensionActionRenderBtn from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.ts'
+import ExtensionActionInterface from '../extensions/actions/ExtensionActionInterface'
+import ExtensionActionRenderBtnComponent from '../extensions/actions/renders/btn/ExtensionActionRenderBtn.vue'
+import ExtensionActionRenderBtnClass from '../extensions/actions/renders/btn/ExtensionActionRenderBtnClass'
 import { Editor } from 'tiptap'
 
 export const PROPS = {
@@ -62,7 +62,7 @@ export default class ActionsRender extends Vue {
   PROPS = PROPS
 
   isBtn (action: ExtensionActionInterface): boolean {
-    return action.render instanceof ExtensionActionRenderBtn
+    return action.render instanceof ExtensionActionRenderBtnClass
   }
 }
 </script>

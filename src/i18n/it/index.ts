@@ -90,7 +90,7 @@ export default {
     Heading: {
       buttons: {
         heading: {
-          tooltip: ({ level }) => level + ' livello intestazione'
+          tooltip: ({ level }: {level: number}) => level + ' livello intestazione'
         }
       }
     },

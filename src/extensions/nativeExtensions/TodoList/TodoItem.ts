@@ -1,10 +1,10 @@
 // import { TodoItem as TodoItemOriginal } from 'tiptap-extensions'
-import AbstractExtension from '~/extensions/AbstractExtension'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import TodoItemNode from '~/extensions/nativeExtensions/TodoList/TodoItemNode'
+import AbstractExtension from '../../AbstractExtension'
+import ExtensionActionInterface from '../../actions/ExtensionActionInterface'
+import TodoItemNode from './TodoItemNode'
 
 export default class TodoItem extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, TodoItemNode)
   }
 

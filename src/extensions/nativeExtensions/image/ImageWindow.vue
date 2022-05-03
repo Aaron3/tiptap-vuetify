@@ -100,12 +100,12 @@
 import { mixins } from 'vue-class-component'
 import { Component, Prop } from 'vue-property-decorator'
 import { VRow, VCol, VImg, VDialog, VCard, VCardTitle, VCardText, VCardActions, VBtn, VSpacer, VIcon, VTextField, VTabs, VTab, VTabsSlider, VTabItem, VTabsItems } from 'vuetify/lib'
-import I18nMixin from '~/mixins/I18nMixin'
-import ImageUploadArea from '~/extensions/nativeExtensions/image/ImageUploadArea.vue'
-import ImageForm from '~/extensions/nativeExtensions/image/ImageForm.vue'
-import ImageSource from '~/extensions/nativeExtensions/image/ImageSource'
+import I18nMixin from '../../../mixins/I18nMixin'
+import ImageUploadArea from './ImageUploadArea.vue'
+import ImageForm from './ImageForm.vue'
+import ImageSource from './ImageSource'
 import { VExpandTransition } from 'vuetify/lib/components/transitions'
-import { COMMON_ICONS } from '~/configs/theme'
+import { COMMON_ICONS } from '../../../configs/theme'
 
 export const PROPS = {
   VALUE: 'value' as const,

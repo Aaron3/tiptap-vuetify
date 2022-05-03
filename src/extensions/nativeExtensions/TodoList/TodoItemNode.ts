@@ -4,7 +4,7 @@ import { sinkListItem, splitToDefaultListItem, liftListItem } from 'tiptap-comma
 import TodoItemView from './TodoItemView.vue'
 
 export default class TodoItem extends Node {
-  options
+  options: Record<string, unknown> = {}
 
   get name () {
     return 'todo_item'
@@ -29,7 +29,7 @@ export default class TodoItem extends Node {
       },
       draggable: true,
       content: this.options.nested ? '(paragraph|todo_list)+' : 'paragraph+',
-      toDOM: node => {
+      toDOM: (node: any) => {
         const { done } = node.attrs
 
         return [
@@ -45,14 +45,14 @@ export default class TodoItem extends Node {
       parseDOM: [{
         priority: 51,
         tag: `[data-type="${this.name}"]`,
-        getAttrs: dom => ({
+        getAttrs: (dom: any) => ({
           done: dom.getAttribute('data-done') === 'true'
         })
       }]
     }
   }
 
-  keys ({ type }) {
+  keys ({ type }: {type: any}) {
     return {
       Enter: splitToDefaultListItem(type),
       Tab: this.options.nested ? sinkListItem(type) : () => {},

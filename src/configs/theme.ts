@@ -1,4 +1,4 @@
-import VuetifyIcon from '~/extensions/nativeExtensions/icons/VuetifyIcon'
+import VuetifyIcon from '../extensions/nativeExtensions/icons/VuetifyIcon'
 
 export const enum VuetifyIconsGroups {
   // default icons in vuetify (official material design icons)

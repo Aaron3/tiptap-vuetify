@@ -32,11 +32,11 @@ import Vue from 'vue'
 import { Component, Prop } from 'vue-property-decorator'
 import { Editor } from 'tiptap'
 import ExtensionActionRenderBtnOptionsInterface from './ExtensionActionRenderBtnOptionsInterface'
-import TextIcon from '~/extensions/nativeExtensions/icons/TextIcon'
-import VuetifyIcon from '~/extensions/nativeExtensions/icons/VuetifyIcon'
-import IconInterface from '~/extensions/nativeExtensions/icons/IconInterface'
+import TextIcon from '../../../nativeExtensions/icons/TextIcon'
+import VuetifyIcon from '../../../nativeExtensions/icons/VuetifyIcon'
+import IconInterface from '../../../nativeExtensions/icons/IconInterface'
 import { VTooltip, VBtn, VIcon } from 'vuetify/lib'
-import ConsoleLogger from '~/logging/ConsoleLogger'
+import ConsoleLogger from '../../../../logging/ConsoleLogger'
 
 // TODO можно использовать как миксин, передавать туда сразу пропсы и не нужно будет писать PROPS = PROPS
 export const PROPS = {

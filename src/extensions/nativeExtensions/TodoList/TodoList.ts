@@ -1,20 +1,20 @@
 import { TodoList as TodoListOriginal } from 'tiptap-extensions'
-import { VuetifyIconsGroups } from '~/configs/theme'
-import VuetifyIcon from '~/extensions/nativeExtensions/icons/VuetifyIcon'
-import I18nText from '~/i18n/I18nText'
-import AbstractExtension from '~/extensions/AbstractExtension'
-import ExtensionActionInterface from '~/extensions/actions/ExtensionActionInterface'
-import ExtensionActionRenderBtn from '~/extensions/actions/renders/btn/ExtensionActionRenderBtn.ts'
+import { VuetifyIconsGroups } from '../../../configs/theme'
+import VuetifyIcon from '../icons/VuetifyIcon'
+import I18nText from '../../../i18n/I18nText'
+import AbstractExtension from '../../AbstractExtension'
+import ExtensionActionInterface from '../../actions/ExtensionActionInterface'
+import ExtensionActionRenderBtnClass from '../../actions/renders/btn/ExtensionActionRenderBtnClass'
 
 export default class TodoList extends AbstractExtension {
-  constructor (options) {
+  constructor (options: Record<string, unknown>) {
     super(options, TodoListOriginal)
   }
 
   get availableActions (): ExtensionActionInterface[] {
     return [
       {
-        render: new ExtensionActionRenderBtn({
+        render: new ExtensionActionRenderBtnClass({
           tooltip: new I18nText('extensions.TodoList.buttons.todoList.tooltip'),
           icons: {
             [VuetifyIconsGroups.md]: new VuetifyIcon('check_box'),
